@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascript 02 - To Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+        ul {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latihan Javascript 02</h1>
+    <p>
+        Buatlah aplikasi To-Do List menggunakan Javascript dalam satu file HTML yang bisa menambahkan 
+        dan menampilkan item to-do dalam daftar! Daftar tidak perlu disimpan permanen.
+    </p>
+
+    <h3>To-Do List</h3>
+    <input type="text" id="tugas" placeholder="Tulis tugas...">
+    <button onclick="tambahTugas()">Tambah</button>
+
+    <ul id="daftarTugas">
+        <li>Mengerjakan latihan 1</li>
+        <li>Membuat laporan</li>
+    </ul>
+
+    <script>
+        function tambahTugas() {
+            let input = document.getElementById("tugas");
+            let tugas = input.value.trim();
+
+            if (tugas === "") {
+                alert("Tuliskan tugas terlebih dahulu!");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.textContent = tugas;
+
+            document.getElementById("daftarTugas").appendChild(li);
+
+            input.value = ""; // Kosongkan input setelah menambah
+        }
+    </script>
+</body>
+</html>
 
